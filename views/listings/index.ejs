@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All listings | Major Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/assets/images/logo.jpg" alt="">
+            </div>
+        </nav>
+    </header>
+    <h1>All Listings of Hotel Here !</h1>
+    <form method="get" action="/listing/new">
+        <button>New Listing</button>
+    </form>
+    <% for(let listing of alllistings){ %>
+        <ul>
+            <li><a href="/listing/<%= listing._id %>"><%= listing.title %></a></li>
+        </ul>
+    <% } %>    
+</body>
+</html>
