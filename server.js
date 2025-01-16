@@ -44,15 +44,17 @@ app.post("/listing", async (req, res)=>{
     res.redirect("/listing");
 });
 
-app.get("/listing/edit", async (req, res)=>{
-    res.render("editform.ejs"); 
-});
-
 app.get("/listing/:id", async (req, res)=>{
     let {id} = req.params;
     let indilisiting = await Listing.findById(id);
     res.render("listings/individualLisitng.ejs", {indilisiting});
 });
+
+app.get("/listing/:id/edit", (req, res)=>{
+    let {id} = req.params;
+    console.log(id);
+    res.send("Every thing working great") 
+}); 
 
 app.listen(PORT, ()=>{
     console.log(`Server is listening to port : ${PORT}`);
