@@ -1,12 +1,18 @@
 <%- include("../includes/boilerplate.ejs") %>  
 <body>
-    <h1>All Listings of Hotel Here !</h1>
-    <form method="get" action="/listing/new">
-        <button>New Listing</button>
-    </form>
-    <% for(let listing of alllistings){ %>
-        <ul>
-            <li><a href="/listing/<%= listing._id %>"><%= listing.title %></a></li>
-        </ul>
-    <% } %>    
+    <h1 id="listing-heading">All Listings of Hotel Here !</h1>
+    <div class="whole-listings-container">
+        <% for(let listing of alllistings){ %>
+            <div class="card">
+                <div class="image">
+                    <img src="<%= listing.image %>" alt="image_of_hotel" id="hotel-images">
+                </div>
+                <ul class="listing-card">
+                    <li><a href="/listing/<%= listing._id %>" id="show-button"><%= listing.title %></a></li>
+                </ul>
+                <p id="listing-description"><%= listing.description %></p>
+                <p id="listing-price">&#8377; <%=listing.price%> /-</p>
+            </div>
+        <% } %>    
+    </div>
 </body>

@@ -1,3 +1,4 @@
+/* BoilerPlate ejs Styling */
 body{
     margin: 0px;
     padding: 0px;
@@ -83,4 +84,50 @@ body{
         top: 10px;
         right: 20px;
     }
+}
+
+
+/* Index ejs Styling */
+#hotel-images{
+    width: 300px;
+    border-radius: 30px;
+}
+.listing-card li{
+    list-style: none;
+    /* padding: 0px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    padding: 20px;
+    box-shadow: 5px 5px 10px 1px #dedede;
+    border-radius: 30px;
+    width: 300px;
+}
+#show-button{
+    background-color: #FF385C;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: auto;
+}
+.whole-listings-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 70px;
+}
+#listing-heading{
+    text-align: center;
+}
+#listing-description{
+    color: grey;
+    padding: 10px;
+}
+#listing-price{
+    text-align: center;
 }
