@@ -6,11 +6,14 @@ let mongoose = require("mongoose");
 let MONGO_URL = "mongodb://127.0.0.1:27017/hotelbooking";
 let Listing = require("./models/listing.js");
 let methodOverride = require("method-override");
+let ejsMate = require("ejs-mate");
 
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "/assets")));
+app.engine("ejs", ejsMate);
 
 let connection = async ()=>{
     await mongoose.connect(MONGO_URL);
@@ -20,6 +23,10 @@ connection().then(()=>{
     console.log("Database Connected");
 }).catch(err =>{
     console.log(err);
+});
+
+app.get("/", (req, res)=>{
+    res.send("I am the root");
 });
 
 app.get("/listing", async (req, res)=>{
