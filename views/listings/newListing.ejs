@@ -1,13 +1,15 @@
 <%- include("../includes/boilerplate.ejs") %>  
 <body>
-    <h1>Create New Listing</h1>
-    <form method="POST" action="/listing">
+    <div class="new-listing-heading">
+        <h1>Create New Listing</h1>
+    </div>
+    <form method="POST" action="/listing" class="new-listing-form">
         <input type="text" name="title" placeholder="Enter Title">
         <input type="text" name="description" placeholder="Enter description">
         <input type="text" name="image" placeholder="Enter Image URL">
         <input type="number" name="price" placeholder="Enter Price">
         <input type="text" name="location" placeholder="Enter location">
         <input type="text" name="country" placeholder="Enter country">
-        <button>Create</button>
+        <button class="new-listing-button">Create</button>
     </form>
 </body>

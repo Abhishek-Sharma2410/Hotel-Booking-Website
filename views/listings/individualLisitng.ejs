@@ -1,15 +1,31 @@
 <%- include("../includes/boilerplate.ejs") %>  
 <body>
-    <h1><%= indilisiting.title %></h1>
-    <ul>
-        <li><%= indilisiting.description %></li>
-        <li><%= indilisiting.price %></li>
-        <li><%= indilisiting.location %></li>
-        <li><%= indilisiting.country %></li>
-        <li><%= indilisiting._id %></li>
-    </ul>
-    <a href="/listing/<%= indilisiting._id %>/edit">Edit Details</a>
-    <form method="post" action="/listing/<%=indilisiting._id%>/?_method=DELETE">
-        <button>Delete Property</button>
-    </form>
+    <div class="individual-listing-conatiner">
+        <div class="individual-listing-image">
+            <img src="<%= indilisiting.image %>" alt="hotel-image">
+        </div>
+        <div class="individual-listing-title">
+            <div class="individual-title">
+                <h1><%= indilisiting.title %></h1>
+            </div>
+            <div class="individual-listing-lists">
+                <ul>
+                    <li><%= indilisiting.description %></li>
+                    <li><%= indilisiting.price %></li>
+                    <li><%= indilisiting.location %></li>
+                    <li><%= indilisiting.country %></li>
+                </ul>
+            </div>
+            <div class="individual-lisiting-buttons">
+                <div class="indi-button-1">
+                    <a href="/listing/<%= indilisiting._id %>/edit">Edit Details</a>
+                </div>
+                <div class="indi-button-2">
+                    <form method="post" action="/listing/<%=indilisiting._id%>/?_method=DELETE" class="indi-form">
+                        <button>Delete Property</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
