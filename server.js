@@ -85,6 +85,11 @@ app.delete("/listing/:id", async (req, res)=>{
     let deletedProperty = await Listing.findByIdAndDelete(id);
     console.log(deletedProperty);
     res.redirect("/listing");
+});
+
+//Middle ware for error page
+app.use((req, res)=>{
+    res.status(404).send("Error Page not found");
 })
 
 app.listen(PORT, ()=>{
