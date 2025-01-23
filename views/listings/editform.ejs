@@ -1,12 +1,15 @@
 <%- include("../includes/boilerplate.ejs") %>  
 <body>
-    <form method="post" action="/listing/<%= listing._id %>?_method=PUT">
+    <div class="edit-listing-heading">
+        <h1>Edit your Listing</h1>
+    </div>
+    <form method="post" action="/listing/<%= listing._id %>?_method=PUT"  class="edit-listing-form">
         <input type="text" name="title" value="<%=listing.title %>">
         <input type="text" name="description" value="<%=listing.description %>">
         <input type="text" name="image" value="<%=listing.image %>">
         <input type="number" name="price" value="<%=listing.price %>">
         <input type="text" name="location" value="<%=listing.location %>">
         <input type="text" name="country" value="<%=listing.country %>">
-        <button>Submit changes</button>
+        <button class="edit-listing-button">Submit changes</button>
     </form>
 </body>
